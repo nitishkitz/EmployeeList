@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">EmployeeList</string>
+    <string-array name="spinner_items">
+        <item>CSE</item>
+        <item>IT</item>
+        <item>EEE</item>
+        <item>MECH</item>
+        <item>CIVIL</item>
+        <item>ECE</item>
+        <!-- Add more items as needed -->
+    </string-array>
+</resources>
