@@ -44,8 +44,6 @@ class NewEmployeeList : AppCompatActivity(), AdapterView.OnItemSelectedListener 
 
             var maleBtn: RadioButton = findViewById(R.id.radioButton1)
             var femaleBtn: RadioButton = findViewById(R.id.radioButton2)
-
-
             if (!switch.isChecked) {
                 Toast.makeText(this, "Please enable the switch", Toast.LENGTH_SHORT).show()
                 switch.text = "Im Not a Fresher"
