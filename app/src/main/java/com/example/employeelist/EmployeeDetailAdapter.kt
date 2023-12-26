@@ -30,7 +30,9 @@ class EmployeeDetailAdapter(private var details:List<Employee>, context: Context
         val note= details[position]
         holder.nameTextview.text = note.name
         holder.addressTextview.text = note.address
-        holder.genderView.text= note.gender.toString()
+
+
+        holder.genderView.text= note.gender
         holder.department.text= note.department.toString()
         holder.fresher.text= note.fresher.toString()
  }

@@ -22,7 +22,7 @@ class NewEmployeeList : AppCompatActivity(), AdapterView.OnItemSelectedListener 
         setContentView(R.layout.activity_new_employee_list)
         val switch: Switch = findViewById(R.id.Switch)
         val saveBtn: Button = findViewById(R.id.saveButton)
-        val discard:Button=findViewById(R.id.discardButton)
+        val discard: Button = findViewById(R.id.discardButton)
         db = DataBaseHelper(this)
         val spinner: Spinner = findViewById(R.id.spinner)
         spinner.onItemSelectedListener = this
@@ -37,8 +37,8 @@ class NewEmployeeList : AppCompatActivity(), AdapterView.OnItemSelectedListener 
         spinnerResult.toString()
         val name: EditText = findViewById(R.id.et_name)
         val address: EditText = findViewById(R.id.et_address)
- saveBtn.setOnClickListener() {
-     validateFields()
+        saveBtn.setOnClickListener() {
+            validateFields()
 
             saveSelectedOptionToDatabase().toString()
 
@@ -52,18 +52,22 @@ class NewEmployeeList : AppCompatActivity(), AdapterView.OnItemSelectedListener 
             } else {
                 switch.text = "Im a fresher"
             }
-if (!maleBtn.isChecked && !femaleBtn.isChecked) {
+            if (!maleBtn.isChecked && !femaleBtn.isChecked) {
                 Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show()
-                val name: EditText = findViewById(R.id.et_name)
-                val address: EditText = findViewById(R.id.et_address)
+
 
             } else {
+                val male: RadioButton = findViewById(R.id.radioButton1)
+                val gender = if (male.isChecked) "Male" else "Female"
+                val department = spinner.selectedItem.toString()
+
+
                 val details = Employee(
                     0,
                     name.text.toString(),
                     address.text.toString(),
-                    saveSelectedOptionToDatabase().toString(),
-                    spinnerResult,
+                    gender,
+                    department,
                     switch.text
                 )
                 db.insertDetails(details)
@@ -73,19 +77,22 @@ if (!maleBtn.isChecked && !femaleBtn.isChecked) {
                 startActivity(i)
             }
         }
-        discard.setOnClickListener(){
-            val i =Intent(applicationContext,MainActivity::class.java)
+        discard.setOnClickListener() {
+            val i = Intent(applicationContext, MainActivity::class.java)
             startActivity(i)
         }
     }
 
     private fun saveSelectedOptionToDatabase() {
+
+
         val radioGroup: RadioGroup = findViewById(R.id.radioGroupgender)
 
         val selectedRadioButtonId = radioGroup.checkedRadioButtonId
         if (selectedRadioButtonId != -1) {
             val selectedRadioButton: RadioButton = findViewById(selectedRadioButtonId)
             val selectedOption = selectedRadioButton.text.toString()
+
             Toast.makeText(this, "Selected option saved: $selectedOption", Toast.LENGTH_SHORT)
                 .show()
         } else {
@@ -106,11 +113,12 @@ if (!maleBtn.isChecked && !femaleBtn.isChecked) {
         val toast = Toast.makeText(applicationContext, "Select one", Toast.LENGTH_SHORT)
         toast.show()
     }
+
     private fun validateFields() {
         val name: EditText = findViewById(R.id.et_name)
         val address: EditText = findViewById(R.id.et_address)
-        val etname=name.text.toString().trim()
-        val etaddress=address.toString().trim()
+        val etname = name.text.toString().trim()
+        val etaddress = address.toString().trim()
         if (etname.isEmpty() || etaddress.isEmpty()) {
             Toast.makeText(this, "Fill up All fields", Toast.LENGTH_SHORT).show()
             return
@@ -119,25 +127,3 @@ if (!maleBtn.isChecked && !femaleBtn.isChecked) {
     }
 }
 
-//val switch: Switch = findViewById(R.id.Switch)
-//val spinner: Spinner = findViewById(R.id.spinner)
-//val radioButtonMale: RadioButton = findViewById(R.id.radioButton1)
-//val radioButtonFemale: RadioButton = findViewById(R.id.radioButton2)
-//val nameInput = name.text.toString().trim()
-//if (nameInput.isEmpty()) {
-//    name.error = "Please enter a name"
-//}
-//
-//val addressInput = address.text.toString().trim()
-//if (addressInput.isEmpty()) {
-//    address.error = "Please enter an address"
-//}
-//
-
-//}
-//
-
-//}
-//if (!radioButtonMale.isChecked && !radioButtonFemale.isChecked) {
-//    Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show()
-//}
