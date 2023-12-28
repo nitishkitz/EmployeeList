@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp"
-    android:backgroundTint="@color/white"
+    android:backgroundTint="#C0C0C0"
     app:cardElevation="4dp">
 
     <LinearLayout
@@ -21,6 +21,7 @@
         <TextView
             android:id="@+id/idName"
             android:textStyle="bold"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Text 1"
@@ -31,6 +32,8 @@
         <TextView
             android:id="@+id/idAddress"
             android:textStyle="bold"
+            android:textColor="@color/black"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Text 2"
@@ -40,6 +43,8 @@
         <TextView
             android:id="@+id/idGender"
             android:textStyle="bold"
+            android:textColor="@color/black"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Text 3"
@@ -50,6 +55,8 @@
         <TextView
             android:textStyle="bold"
             android:id="@+id/idDepartment"
+            android:textColor="@color/black"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Text 4"
@@ -60,8 +67,20 @@
             android:id="@+id/idFresher"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+
             android:text="Text 4"
             android:textSize="18sp"
          />
+        <TextView
+            android:textStyle="bold"
+            android:id="@+id/idRemark"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+
+            android:text="Text 4"
+            android:textSize="18sp"
+            />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

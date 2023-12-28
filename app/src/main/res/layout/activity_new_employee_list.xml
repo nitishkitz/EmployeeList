@@ -105,27 +105,38 @@
         app:layout_constraintStart_toEndOf="@+id/tv_fresher"
         app:layout_constraintTop_toBottomOf="@id/radioGroupgender" />
 
+    <EditText
+        android:id="@+id/Et_remark"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:hint="REMARKS"
+        android:inputType="text"
+
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_fresher" />
+
     <Button
         android:id="@+id/saveButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
         android:layout_marginLeft="50dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintTop_toBottomOf="@+id/Switch"
+        android:text="SAVE"
+
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
-       />
+        app:layout_constraintTop_toBottomOf="@+id/Et_remark" />
 
     <Button
         android:id="@+id/discardButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="discard"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Switch"
         app:layout_constraintStart_toEndOf="@+id/saveButton"
-      />
+        app:layout_constraintTop_toBottomOf="@+id/Et_remark" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

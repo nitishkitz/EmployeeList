@@ -9,6 +9,8 @@ data class Employee(
     val address: String,
     val gender: String="",
     val department:String?="",
-    val fresher: Any?
+    val fresher: Any?,
+    val remarks: String
+
 )
 

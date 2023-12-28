@@ -2,6 +2,7 @@ package com.example.employeelist
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 class MainActivity : AppCompatActivity() {
     private lateinit var db: DataBaseHelper
     private lateinit var EmployeeAdapter: EmployeeDetailAdapter
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         var recyclerView:RecyclerView=findViewById(R.id.recyclerview)
         recyclerView.layoutManager=LinearLayoutManager(this)
         recyclerView.adapter=EmployeeAdapter
+
 
 
         addButton.setOnClickListener(){
@@ -42,6 +45,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
 
 
 }

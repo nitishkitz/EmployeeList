@@ -21,12 +21,14 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(
         private val COLUMN_DEPARTMENT = "department"
         private val COLUMN_GENDER = "gender"
         private val COLUMN_FRESHER = "fresher"
+        private val COLUMN_REMARK = "remark"
+
 
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
         val createTableQuery =
-            "CREATE TABLE $TABLE_NAME($COLUMN_ID INTEGER PRIMARY KEY,$COLUMN_NAME TEXT,$COLUMN_ADDRESS TEXT,$COLUMN_GENDER TEXT,$COLUMN_DEPARTMENT TEXT,$COLUMN_FRESHER)"
+            "CREATE TABLE $TABLE_NAME($COLUMN_ID INTEGER PRIMARY KEY,$COLUMN_NAME TEXT,$COLUMN_ADDRESS TEXT,$COLUMN_GENDER TEXT,$COLUMN_REMARK TEXT,$COLUMN_DEPARTMENT TEXT,$COLUMN_FRESHER)"
         db?.execSQL(createTableQuery)
 
     }
@@ -45,6 +47,8 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(
             put(COLUMN_GENDER, details.gender.toString())
             put(COLUMN_DEPARTMENT, details.department.toString())
             put(COLUMN_FRESHER, details.fresher.toString())
+            put(COLUMN_REMARK, details.remarks)
+
         }
         db.insert(TABLE_NAME, null, values)
         db.close()
@@ -64,7 +68,9 @@ class DataBaseHelper(context: Context) : SQLiteOpenHelper(
             val department = cursur.getString(cursur.getColumnIndexOrThrow(COLUMN_DEPARTMENT))
             val gender = cursur.getString(cursur.getColumnIndexOrThrow(COLUMN_GENDER))
             val fresher = cursur.getString(cursur.getColumnIndexOrThrow(COLUMN_FRESHER))
-            employeelist.add(Employee(id, name, address, gender, department, fresher))
+            val remark = cursur.getString(cursur.getColumnIndexOrThrow(COLUMN_REMARK))
+
+            employeelist.add(Employee(id, name, address, gender, department, fresher,remark))
         }
         cursur.close()
         db.close()
