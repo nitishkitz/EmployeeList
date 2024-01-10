@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/whitebg"
     android:layout_height="match_parent"
     tools:context=".NewEmployeeList">
 
@@ -10,6 +11,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:id="@+id/et_name"
+        android:textColor="@color/black"
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,6 +25,7 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:id="@+id/et_address"
+        android:textColor="@color/black"
         android:inputType="textMultiLine"
         app:layout_constraintTop_toBottomOf="@id/et_name"
         app:layout_constraintEnd_toEndOf="parent"
@@ -35,6 +38,7 @@
     <TextView
         android:id="@+id/et_selectDepartment"
         android:layout_width="wrap_content"
+        android:textColor="@color/black"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="25dp"
@@ -49,6 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/et_selectDepartment" />
@@ -56,6 +61,7 @@
     <TextView
         android:id="@+id/tv_gender"
         android:text="Gender"
+        android:textColor="@color/black"
         android:layout_marginTop="25dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -68,11 +74,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_gender">
 
         <RadioButton
+            android:textColor="@color/black"
             android:id="@+id/radioButton1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -81,6 +89,7 @@
 
 
         <RadioButton
+            android:textColor="@color/black"
             android:id="@+id/radioButton2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,6 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
         android:text="Isa Fresher"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/radioGroupgender" />
@@ -111,6 +121,7 @@
         android:layout_height="50dp"
         android:hint="REMARKS"
         android:inputType="text"
+        android:textColor="@color/black"
 
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -123,6 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="50dp"
         android:text="SAVE"
+        android:textColor="@color/black"
 
         android:layout_marginTop="25dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -133,6 +145,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="discard"
+        android:textColor="@color/black"
         android:layout_marginTop="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/saveButton"

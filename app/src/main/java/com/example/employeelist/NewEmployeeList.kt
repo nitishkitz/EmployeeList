@@ -54,11 +54,14 @@ class NewEmployeeList : AppCompatActivity(), AdapterView.OnItemSelectedListener 
             saveSelectedOptionToDatabase()
             var maleBtn: RadioButton = findViewById(R.id.radioButton1)
             var femaleBtn: RadioButton = findViewById(R.id.radioButton2)
-            if (!switch.isChecked) {
-                Toast.makeText(this, "Please enable the switch", Toast.LENGTH_SHORT).show()
-                switch.text = "Im Not a Fresher"
+            if (!switch.isChecked) {if (!maleBtn.isChecked && !femaleBtn.isChecked) {
+                Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show()
+
             } else {
-                switch.text = "Im a fresher"
+println("done")
+
+            }
+
             }
             if (!maleBtn.isChecked && !femaleBtn.isChecked) {
                 Toast.makeText(this, "Please select a gender", Toast.LENGTH_SHORT).show()
@@ -175,11 +178,7 @@ class NewEmployeeList : AppCompatActivity(), AdapterView.OnItemSelectedListener 
         ) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             return
         }
         notificationManager.notify(1, notificationBuilder.build())
