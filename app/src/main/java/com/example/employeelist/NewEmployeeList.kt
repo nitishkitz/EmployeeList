@@ -74,6 +74,7 @@ println("done")
                 val name: EditText = findViewById(R.id.et_name)
                 val address: EditText = findViewById(R.id.et_address)
                 val remark: EditText = findViewById(R.id.Et_remark)
+                //TYYRUTTFJYJYF
 
 
                 val details = Employee(
